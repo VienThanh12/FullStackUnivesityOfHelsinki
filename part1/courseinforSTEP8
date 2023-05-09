@@ -7,12 +7,12 @@ const Statistics = (props) => {
   let positive_num = props.good / total * 100
   return (
     <div>
-    <p> good {props.good} </p>
-    <p> neutral {props.neutral} </p>
-    <p> bad {props.bad} </p>
-    <p> all {props.good + props.neutral + props.bad} </p>
-    <p> average {total_point / total} </p>
-    <p> positive {props.good / total * 100} % </p>
+      <p> good {props.good} </p>
+      <p> neutral {props.neutral} </p>
+      <p> bad {props.bad} </p>
+      <p> all {props.good + props.neutral + props.bad} </p>
+      <p> average {total_point / total} </p>
+      <p> positive {props.good / total * 100} % </p>
     </div>
   )
 }
