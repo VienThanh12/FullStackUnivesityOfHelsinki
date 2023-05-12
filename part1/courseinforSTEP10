@@ -27,7 +27,7 @@ const Statistics = ({good, neutral, bad}) => {
       <StatisticLine label = "bad" value = {bad}/>
       <StatisticLine label = "all" value = {good + neutral + bad}/>
       <StatisticLine label = "average" value = {total_point / total}/>
-      <StatisticLine label = "positive" value = {`${good / total} %`}  /> 
+      <StatisticLine label = "positive" value = {`${good / total * 100} %`}  /> 
       </div>
     )
 }
