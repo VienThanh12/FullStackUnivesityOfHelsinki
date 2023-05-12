@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+
+const Button = ({ onClick, label }) => {
+  return (
+    <button onClick={onClick}>{label}</button>
+  );
+};
+
+const StatisticLine = ({ label, value }) => {
+  return (
+    <div>
+      <span>{label}: </span>
+      <span>{value}</span>
+    </div>
+  );
+};
+
+const Statistics = (props) => {
+  const total = props.good + props.neutral + props.bad;
+  const total_point = props.good - props.bad;
+  const positive_num = (props.good / total) * 100; 
+
+  if (total === 0) {
+    return <p>No feedback given</p>;
+  } else if (total > 0) {
+    return (
+      <div>
+        <StatisticLine label="Good" value={props.good} />
+        <StatisticLine label="Neutral" value={props.neutral} />
+        <StatisticLine label="Bad" value={props.bad} />
+        <StatisticLine label="All" value={props.good + props.neutral + props.bad} />
+        <StatisticLine label="Average" value={total_point / total} />
+        <StatisticLine label="Positive" value={`${positive_num} %`} />
+      </div>
+    );
+  }
+};
+
+const App = () => {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+
+  const increaseGoodByOne = () => setGood(good + 1);
+  const increaseNeutralByOne = () => setNeutral(neutral + 1);
+  const increaseBadByOne = () => setBad(bad + 1);
+
+  return (
+    <div>
+      <h1>Give feedback</h1>
+      <Button onClick={increaseGoodByOne} label="Good" />
+      <Button onClick={increaseNeutralByOne} label="Neutral" />
+      <Button onClick={increaseBadByOne} label="Bad" />
+      <h1>Statistics</h1>
+      <Button onClick={null} label="Submit" />
+      <Statistics good={good} neutral={neutral} bad={bad} />
+    </div>
+  );
+};
+
+export default App;
