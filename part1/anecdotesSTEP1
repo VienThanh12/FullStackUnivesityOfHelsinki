@@ -31,7 +31,7 @@ const App = () => {
     <div>
       {anecdotes[selected]}
       <p> </p>
-      <Button label = {printRanNum} anecdotes = {anecdotes} selected = {selected}/>
+        <Button label = {printRanNum} anecdotes = {anecdotes} selected = {selected}/>
     </div>
   )
 }
