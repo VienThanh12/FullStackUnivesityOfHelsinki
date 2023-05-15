@@ -5,6 +5,7 @@ const Button = ({label, value}) => {
     <button onClick = {label}> {value} </button>
   )
 }
+
 const StatisticLine = ({label, value}) => {
   return (
   <table>
