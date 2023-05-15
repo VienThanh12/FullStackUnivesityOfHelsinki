@@ -1,5 +1,0 @@
-public class Person {
-	string name;
-	int age;
-	float height;
-}
