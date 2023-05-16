@@ -12,6 +12,12 @@ const Button_Vote = ({label, vote, selected}) => {
     <button onClick={label}> vote </button>
   )
 } 
+const Print = ({vote_selected}) => {
+  if(vote_selected <= 1)
+    return <p> has {vote_selected} vote </p>
+  else
+    return <p> has {vote_selected} votes </p>
+}
 const App = () => {
   const [selected, setSelected] = useState(0)
   const [vote, setVote] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
@@ -42,9 +48,10 @@ const App = () => {
 
   return (
     <div>
+      
       {anecdotes[selected]}
       <p> </p>
-      {vote[selected]}
+      <Print vote_selected = {vote[selected]}/>
       <p> </p>
         <Button_Vote label = {increaseVoteByOne} vote = {vote} selected = {selected}/> 
         <Button label = {printRanNum} anecdotes = {anecdotes} selected = {selected}/>
