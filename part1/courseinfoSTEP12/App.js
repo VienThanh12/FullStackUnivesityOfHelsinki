@@ -7,6 +7,7 @@ const Button = ({label, anecdotes, selected}) => {
     <button onClick = {label}> next anecdote </button>
   )
 }
+
 const Button_Vote = ({label, vote, selected}) => {
   return (
     <button onClick={label}> vote </button>
