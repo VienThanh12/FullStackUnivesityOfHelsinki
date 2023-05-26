@@ -18,13 +18,10 @@ const App = () => {
     const NameObject = {
       name: newName,
     }
-    console.log(NameObject.name)
-    console.log(name[NameObject.name])
 
     if(Check(NameObject.name) == true){
       setPersons(persons.concat(NameObject))
       name.push(NameObject.name)
-      console.log(name)
     }
     else if(Check(NameObject.name) == false)
       alert(`${NameObject.name} is already added to phonebook`)
