@@ -4,7 +4,8 @@ const App = () => {
   const [persons, setPersons] = useState([
     { 
       name: 'Arto Hellas',
-      num: '040-1234567'
+      num: '040-1234567',
+      id: 1
     }
   ]) 
   const [newName, setNewName] = useState('')
@@ -13,7 +14,8 @@ const App = () => {
     event.preventDefault()
     const NameObject = {
       name: newName,
-      num: newNum
+      num: newNum,
+      id: persons.length + 1
     }
     setPersons(persons.concat(NameObject))
     setNewName('')
@@ -46,7 +48,7 @@ const App = () => {
       <h2>Numbers</h2>
       <p>
         {
-          persons.map(persons => <p> {persons.name} {persons.num}</p>)
+          persons.map(persons => <p key = {persons.id} > {persons.name} {persons.num}</p>)
         }
       </p>
     </div>
