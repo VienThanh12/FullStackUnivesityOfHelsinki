@@ -48,7 +48,7 @@ const App = () => {
           />
         </div>
       </form>
-      <h2>add a new</h2>
+      <h3>add a new</h3>
       <form onSubmit = {addNote}>
         <div>
           name: <input 
@@ -64,7 +64,7 @@ const App = () => {
           <button type = "submit"> add </button>
         </div>
       </form>
-      <h2>Numbers</h2>
+      <h3>Numbers</h3>
       <p>
         {
           personsToShow.map(persons => <p key = {persons.id} > {persons.name} {persons.num}</p>)
