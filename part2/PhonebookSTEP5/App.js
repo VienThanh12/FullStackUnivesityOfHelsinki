@@ -31,6 +31,7 @@ const PersonForm = ({addNote, handPersonChange, handNumberChange}) => {
     </form>
   )
 }
+
 const Persons = ({persons, personsToShow}) => {
   return (
     <p>
