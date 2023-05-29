@@ -19,7 +19,7 @@ const App = () => {
   }
   return (
     <div>
-      <h2>Phonebook</h2>
+      <h3>Phonebook</h3>
       <form onSubmit = {addNote}>
         <div>
           name: <input 
@@ -30,7 +30,7 @@ const App = () => {
           <button type = "submit"> add </button>
         </div>
       </form>
-      <h2>Numbers</h2>
+      <h3>Numbers</h3>
       <p>
         {
           persons.map(persons => <p> {persons.name} </p>)
