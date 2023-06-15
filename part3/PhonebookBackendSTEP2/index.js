@@ -42,7 +42,6 @@ app.get('/info', (request, response) => {
   )
   console.log(date)
 })
-
 app.get('/info/persons/:id', (request, response) => {
   const id = Number(request.params.id)
   const person = persons.find(note => note.id === id)
