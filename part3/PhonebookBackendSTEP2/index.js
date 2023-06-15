@@ -27,7 +27,7 @@ let persons = [
   }
 ]
 
-app.get('/info/persons', (request, response) => {
+app.get('/api/persons', (request, response) => {
   response.send(persons)
 })
 
@@ -41,15 +41,6 @@ app.get('/info', (request, response) => {
   <p> ${date} </p>`
   )
   console.log(date)
-})
-app.get('/info/persons/:id', (request, response) => {
-  const id = Number(request.params.id)
-  const person = persons.find(note => note.id === id)
-  if(person != null) {
-    response.json(person)
-  } else {
-    response.status(404).end()
-  }
 })
 
 const PORT = 3001
