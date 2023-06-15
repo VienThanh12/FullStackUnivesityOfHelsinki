@@ -59,7 +59,7 @@ const generatedID = () => {
 }
 app.post('/api/notes', (request, response) => {
   const body = request.body
-  if(body.contet ===   null){
+  if(!body.contet){
     return response.status(400).json({ 
       error: 'content missing' 
     })
