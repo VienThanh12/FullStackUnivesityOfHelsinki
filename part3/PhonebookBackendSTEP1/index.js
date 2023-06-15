@@ -31,34 +31,6 @@ app.get('/api/persons', (request, response) => {
   response.send(persons)
 })
 
-app.get('/info', (request, response) => {
-  //response.send(persons)
-  const date = new Date()
-  let day = date.toLocaleString('en-us', { weekday: 'long' });
-  let month = date.toLocaleString('en-us', { month: 'long' });
-  response.send(
-  `<p>Phonebook has information for ${persons.length} people</p> 
-  <p> ${date} </p>`
-  )
-  console.log(date)
-})
-
-app.get('/info/persons/:id', (request, response) => {
-  const id = Number(request.params.id)
-  const person = persons.find(note => note.id === id)
-  if(person != null) {
-    response.json(person)
-  } else {
-    response.status(404).end()
-  }
-})
-
-app.delete('/info/persons/:id', (request, response) => {
-  const id = Number(request.params.id)
-  persons = persons.filter(person => person.id !== id)
-
-  response.status(204).end()
-})
 
 const PORT = 3001
 app.listen(PORT, () => {
