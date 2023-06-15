@@ -27,7 +27,7 @@ let persons = [
   }
 ]
 
-app.get('/api/persons', (request, response) => {
+app.get('/info/persons', (request, response) => {
   response.send(persons)
 })
 
