@@ -5,7 +5,6 @@ const cors = require('cors') // accest cors policy
 
 const app = express()
 
-
 app.use(cors()) // cors policy
 app.use(express.static('build'))  // accest to front-end
 app.use(express.json())
