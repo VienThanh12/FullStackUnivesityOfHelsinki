@@ -215,7 +215,7 @@ describe('mostBlog', () => {
         blogs: 3
       }
     
-    test('favoriteBlogs', () => {
+    test('mostBlog', () => {
         const result = listHelper.mostBlog(blogs)
         expect(result).toEqual(Res)
     })
