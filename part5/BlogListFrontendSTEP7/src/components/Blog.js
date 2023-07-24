@@ -31,7 +31,7 @@ const Blog = ({blog}) => {
         <br></br>
         likes {blog.likes}
         <br></br>
-        {blog.author}  
+        {blog.user.name}  
       </div>
     </div>
     )
