@@ -35,7 +35,7 @@ const App = () => {
                 setBlogs(initialBlogs)
                 }
             )
-    }, [])
+    }, [blogs])
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
@@ -95,32 +95,42 @@ const App = () => {
         )
     }
     const addBlog = (event) => {
-        event.preventDefault()
-        const blogObject = {
-            title: title,
-            author: author,
-            url: url
-        }
-    blogService
-      .create(blogObject)
-        .then(returnedBlog => {
-            setNoti(`a new blog ${returnedBlog.title} by ${returnedBlog.author} added`)
-            setBlogs(blogs.concat(returnedBlog))
-            setTimeout(() => {
-                setNoti(null)
-            }, 5000)
+    if(!user){
+        setErrorMessage('please enter username and password before creating a new blog')
+        setTimeout(() => {
+            setErrorMessage(null)
+        }, 5000)
+    }
+    else{
+            event.preventDefault()
+            const blogObject = {
+                title: title,
+                author: author,
+                url: url
+            }
+        blogService
+        .create(blogObject)
+            .then(returnedBlog => {
+                console.log(returnedBlog)
+                setNoti(`a new blog ${returnedBlog.title} by ${returnedBlog.author} added`)
+                setBlogs(blogs.concat(returnedBlog))
+                console.log(returnedBlog)
+                setTimeout(() => {
+                    setNoti(null)
+                }, 5000)
 
-      })
+            })
+        }
     }
 
     const addLikes = (blog) => {
-
         const blogObject = {
             title: blog.title,
             author: blog.author,
             likes: blog.likes + 1,
             user: blog.user.id,
             url: blog.url
+            
         }
     blogService
         .update(blog.id, blogObject)
@@ -136,6 +146,10 @@ const App = () => {
         setPassword('')
     }
 
+    const removeBlog = (blog) => {
+        //console.log(blog)
+        //console.log("hi")
+    }
     return (
         <div>
             <Notification message = {errorMessage}/>
@@ -162,7 +176,7 @@ const App = () => {
             </Togglable>
 
             {blogs.map(blog => 
-            <Blog key = {blog.id} blog = {blog} addLikes = {addLikes}/>)}
+            <Blog key = {blog.id} blog = {blog} addLikes = {addLikes} removeBlog = {removeBlog}/>)}
         </div>
     )
 }
