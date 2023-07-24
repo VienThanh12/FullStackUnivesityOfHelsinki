@@ -18,7 +18,6 @@ const Blog = ({blog, addLikes, removeBlog}) => {
         borderWidth: 1,
         marginBottom: 5
     }
-    
    
     return (
     <div style = {blogStyle}>
