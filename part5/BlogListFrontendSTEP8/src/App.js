@@ -22,8 +22,20 @@ const App = () => {
     useEffect(() => {
         blogService
             .getAll()
-            .then(initialBlogs => setBlogs(initialBlogs))
-    }, [])
+            .then(initialBlogs => {
+                for(var i = 0; i < initialBlogs.length; i++){
+                    for(var j = i + 1; j < initialBlogs.length; j++){
+                        if(initialBlogs[i].likes < initialBlogs[j].likes){
+                            let temp = initialBlogs[i]
+                            initialBlogs[i] = initialBlogs[j]
+                            initialBlogs[j] = temp                            
+                        }                        
+                    }
+                }
+                setBlogs(initialBlogs)
+                }
+            )
+    }, [blogs])
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
@@ -83,33 +95,61 @@ const App = () => {
         )
     }
     const addBlog = (event) => {
-        event.preventDefault()
-        const blogObject = {
-            title: title,
-            author: author,
-            url: url,
-            likes: 0
-        }
-    blogService
-      .create(blogObject)
-        .then(returnedBlog => {
-            setNoti(`a new blog ${returnedBlog.title} by ${returnedBlog.author} added`)
-            setBlogs(blogs.concat(returnedBlog))
-            setTimeout(() => {
-                setNoti(null)
-            }, 5000)
+    if(!user){
+        setErrorMessage('please enter username and password before creating a new blog')
+        setTimeout(() => {
+            setErrorMessage(null)
+        }, 5000)
+    }
+    else{
+            event.preventDefault()
+            const blogObject = {
+                title: title,
+                author: author,
+                url: url
+            }
+        blogService
+        .create(blogObject)
+            .then(returnedBlog => {
+                console.log(returnedBlog)
+                setNoti(`a new blog ${returnedBlog.title} by ${returnedBlog.author} added`)
+                setBlogs(blogs.concat(returnedBlog))
+                console.log(returnedBlog)
+                setTimeout(() => {
+                    setNoti(null)
+                }, 5000)
 
-      })
+            })
+        }
     }
 
+    const addLikes = (blog) => {
+        const blogObject = {
+            title: blog.title,
+            author: blog.author,
+            likes: blog.likes + 1,
+            user: blog.user.id,
+            url: blog.url
+            
+        }
+    blogService
+        .update(blog.id, blogObject)
+        .then((returnedBlog) => {
+            var blog = blogs.map((blogs) => blogs.id === returnedBlog.id ? returnedBlog : blogs)
+            setBlogs(blog)
+        })
+    }
     const logOut = (event) => {
         window.localStorage.clear()
-       // console.log(window.localStorage)
         setUser(null)
         setUsername('')
         setPassword('')
     }
 
+    const removeBlog = (blog) => {
+        //console.log(blog)
+        //console.log("hi")
+    }
     return (
         <div>
             <Notification message = {errorMessage}/>
@@ -136,7 +176,7 @@ const App = () => {
             </Togglable>
 
             {blogs.map(blog => 
-            <Blog key = {blog.id} blog = {blog}/>)}
+            <Blog key = {blog.id} blog = {blog} addLikes = {addLikes} removeBlog = {removeBlog}/>)}
         </div>
     )
 }
