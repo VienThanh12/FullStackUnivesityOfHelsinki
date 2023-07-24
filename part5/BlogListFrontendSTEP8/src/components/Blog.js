@@ -29,7 +29,7 @@ const Blog = ({blog}) => {
         <br></br> 
         {blog.url} 
         <br></br>
-        likes {blog.likes}
+        likes {blog.likes} <button> like </button>
         <br></br>
         {blog.author}  
       </div>
