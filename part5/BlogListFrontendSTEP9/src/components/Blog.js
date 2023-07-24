@@ -33,7 +33,7 @@ const Blog = ({blog, addLikes, removeBlog}) => {
         <br></br>
         likes {blog.likes} <button onClick = {() => addLikes(blog)}> like </button>
         <br></br>
-        {blog.user.username}  
+        {blog.user.name}  
         <br></br>
         <button onClick = {() => removeBlog(blog)}> remove </button>
       </div>
