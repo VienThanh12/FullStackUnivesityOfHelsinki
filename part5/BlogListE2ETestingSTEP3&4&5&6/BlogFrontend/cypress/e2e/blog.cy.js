@@ -18,7 +18,7 @@ describe('Blog app', function() {
 
     cy.visit('http://localhost:3000')
   })
-  /*
+  
   it('Login form is shown', function() {
     cy.contains('username')
     cy.contains('password')
@@ -42,7 +42,7 @@ describe('Blog app', function() {
       cy.contains('wrong username or password')
     })
   })
-  */
+  
   describe('When logged in', function() {
     beforeEach(function() {
       cy.get('#username').type('Kevin')
@@ -57,7 +57,7 @@ describe('Blog app', function() {
       cy.get('#create-button').click()
 
     })
-    /*
+    
     it('A blog can be created', function() {
       cy.contains('a blog created by cypress')
     })
@@ -77,7 +77,7 @@ describe('Blog app', function() {
       cy.get('#delete-button').click()
       cy.contains('Deleting was successful')
     })
-    */
+    
     it('the user who created can see delete button', function() {
       cy.get('#logout-button').click()
       cy.get('#username').type('Kayde')
@@ -87,6 +87,10 @@ describe('Blog app', function() {
       cy.get('#view-button').click()
       cy.get('#delete-button').click()
       cy.contains('Deleting was unsuccessful because of invalid user or expired token.')
+    })
+    
+    it(' the blogs are ordered according to likes with the blog with the most likes being first.', function(){
+
     })
   })
 
