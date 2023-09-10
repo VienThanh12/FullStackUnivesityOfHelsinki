@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addAnecdote , createAnecdote} from '../reducers/anecdoteReducer'
+import { createAnecdote} from '../reducers/anecdoteReducer'
 import { notiCreate, reset5 } from '../reducers/notiReducer'
 import anecdoteService from '../services/anecdotes'
 
@@ -10,7 +10,6 @@ const NewAnecdote = () => {
         event.preventDefault()
         const content = event.target.newContent.value
         event.target.newContent.value = ''
-        dispatch(addAnecdote(content))
         dispatch(notiCreate(content))
         setTimeout(() => {
             dispatch(reset5())
