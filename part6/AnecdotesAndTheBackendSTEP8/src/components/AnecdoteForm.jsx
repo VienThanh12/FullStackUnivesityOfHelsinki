@@ -14,10 +14,8 @@ const AnecdoteForm = () => {
   })
 
   const addAnecdote = async (event) => {
-    console.log(event.target.anecdote.value.length)
     if(event.target.anecdote.value.length > 5){
       event.preventDefault()
-      console.log("hi")
       const content = event.target.anecdote.value
       event.target.anecdote.value = ''
       newAnecdoteMutation.mutate({ content, "votes": 0, id: getId()})
