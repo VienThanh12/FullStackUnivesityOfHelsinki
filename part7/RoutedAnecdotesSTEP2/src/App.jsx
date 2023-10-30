@@ -43,15 +43,21 @@ instead of using
 we use
 <Link to = {`/anecdotes/${anecdote.id}`}> {anecdote.content} </Link> 
 */
+const anecdoteById = (id) => anecdotes.find(a => a.id === id)
+
 const AnecdotesRouted = (anecdotes) => {
   console.log(anecdotes.anecdotes[0].content)
+  
   const id = useParams().id
   console.log(id)  
+  const anecdote = anecdotes.anecdotes.find(a => a.id == id)
+  console.log(anecdote)
+  
   return (
     <div>
-      <h2> {anecdotes.anecdotes[id - 1].content} by {anecdotes.anecdotes[id - 1].author} </h2>
-      <p> has {anecdotes.anecdotes[id - 1].votes} votes </p>
-      <p> for more info see <Link to = {`${anecdotes.anecdotes[id - 1].info}`}> {anecdotes.anecdotes[id - 1].info} </Link> </p>
+      <h2> {anecdote.content} by {anecdote.author} </h2>
+      <p> has {anecdote.votes} votes </p>
+      <p> for more info see <Link to = {`${anecdote.info}`}> {anecdote.info} </Link> </p>
       <Link to = {``}>  </Link>
     </div>
   )
@@ -76,17 +82,17 @@ const CreateNew = (props) => {
       <form onSubmit =  {handleSubmit}>
         <div>
           content
-          <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
+          <input name='content' value = {content} onChange={(e) => setContent(e.target.value)} />
         </div>
         <div>
           author
-          <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
+          <input name='author' value = {author} onChange={(e) => setAuthor(e.target.value)} />
         </div>
         <div>
           url for more info
-          <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
+          <input name='info' value = {info} onChange={(e)=> setInfo(e.target.value)} />
         </div>
-        <button>create</button>
+        <button> create </button>
       </form>
     </div>
   )
@@ -116,7 +122,8 @@ const App = () => {
     anecdote.id = Math.round(Math.random() * 10000)
     setAnecdotes(anecdotes.concat(anecdote))
   }
-  const anecdoteById = (id) => anecdotes.find(a => a.id === id)
+  
+
   const vote = (id) => {
     const anecdote = anecdoteById(id)
     const voted = {
@@ -136,6 +143,9 @@ const App = () => {
               <Link to = "/" style = {padding}> anecdotes </Link>
               <Link to = "/create" style = {padding}> create new </Link>
               <Link to = "/about" style = {padding}> about </Link>
+              {
+
+              }
             </div>
           <div>
           </div>
