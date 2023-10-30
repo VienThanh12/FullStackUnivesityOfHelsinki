@@ -2,17 +2,23 @@ import { useState } from 'react'
 
 import {
   BrowserRouter as Router,
-  Routes, Route, Link
+  Routes, Route, Link, useParams
 } from 'react-router-dom' 
 
-const AnecdoteList = ({ anecdotes }) => (
-  <div>
-    <h2> Anecdotes </h2>
-    <ul>
-      {anecdotes.map(anecdote => <li key={anecdote.id} >{anecdote.content}</li>)}
-    </ul>
-  </div>
-)
+const AnecdoteList = ({ anecdotes }) => {
+  return (
+    <div>
+      <h2> Anecdotes </h2>
+        <ul>
+          {anecdotes.map(anecdote => 
+            <li key = {anecdote.id} > 
+              <Link to = {`/anecdotes/${anecdote.id}`}> {anecdote.content} </Link> 
+            </li>
+          )}
+        </ul>
+    </div>
+  )
+}
 
 const About = () => (
   <div>
@@ -30,9 +36,26 @@ const Footer = () => (
     Anecdote app for <a href='https://fullstackopen.com/'>Full Stack Open</a>.
     See <a href='https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js'>https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js</a> for the source code.
   </div>
-
 )
-
+/*
+instead of using 
+<a href='https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js'>https://github.com/fullstack-hy2020/routed-anecdotes/blob/master/src/App.js</a>
+we use
+<Link to = {`/anecdotes/${anecdote.id}`}> {anecdote.content} </Link> 
+*/
+const AnecdotesRouted = (anecdotes) => {
+  console.log(anecdotes.anecdotes[0].content)
+  const id = useParams().id
+  console.log(id)  
+  return (
+    <div>
+      <h2> {anecdotes.anecdotes[id - 1].content} by {anecdotes.anecdotes[id - 1].author} </h2>
+      <p> has {anecdotes.anecdotes[id - 1].votes} votes </p>
+      <p> for more info see <Link to = {`${anecdotes.anecdotes[id - 1].info}`}> {anecdotes.anecdotes[id - 1].info} </Link> </p>
+      <Link to = {``}>  </Link>
+    </div>
+  )
+}
 const CreateNew = (props) => {
   const [content, setContent] = useState('')
   const [author, setAuthor] = useState('')
@@ -120,6 +143,8 @@ const App = () => {
             <Route path = "/" element = {<AnecdoteList anecdotes = {anecdotes} />} />
             <Route path = "/create" element = {<CreateNew addNew = {addNew} />} />
             <Route path = "/about" element = {<About />} />
+          
+            <Route path = "/anecdotes/:id" element = {<AnecdotesRouted anecdotes = {anecdotes}/>}/>
           </Routes>
           <Footer />
         </div>
