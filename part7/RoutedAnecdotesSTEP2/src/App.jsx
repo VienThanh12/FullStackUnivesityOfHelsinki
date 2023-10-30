@@ -45,20 +45,15 @@ we use
 */
 const anecdoteById = (id) => anecdotes.find(a => a.id === id)
 
-const AnecdotesRouted = (anecdotes) => {
-  console.log(anecdotes.anecdotes[0].content)
-  
+const AnecdotesRouted = (anecdotes) => {  
   const id = useParams().id
-  console.log(id)  
   const anecdote = anecdotes.anecdotes.find(a => a.id == id)
-  console.log(anecdote)
   
   return (
     <div>
       <h2> {anecdote.content} by {anecdote.author} </h2>
       <p> has {anecdote.votes} votes </p>
       <p> for more info see <Link to = {`${anecdote.info}`}> {anecdote.info} </Link> </p>
-      <Link to = {``}>  </Link>
     </div>
   )
 }
