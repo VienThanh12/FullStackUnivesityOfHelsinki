@@ -72,7 +72,11 @@ const CreateNew = (props) => {
       info,
       votes: 0
     })
+    props.onCreate(`a new anecdote ${content} created!`)
     navigate('/')  
+    setTimeout(() => {
+      props.onCreate(null)
+    }, 5000)
   }
   return (
     <div>
@@ -96,8 +100,6 @@ const CreateNew = (props) => {
   )
 }
 
- 
-
 const App = () => {
   const [anecdotes, setAnecdotes] = useState([
     {
@@ -116,11 +118,17 @@ const App = () => {
     }
   ])
   const [notification, setNotification] = useState('')
+
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)
     setAnecdotes(anecdotes.concat(anecdote))
   }
   
+  const [ok, setOk] = useState(null)
+  
+  const createNoti = (ok) => {
+    setOk(ok)
+  }
 
   const vote = (id) => {
     const anecdote = anecdoteById(id)
@@ -129,27 +137,27 @@ const App = () => {
       votes: anecdote.votes + 1
     }
     setAnecdotes(anecdotes.map(a => a.id === id ? voted : a))
-}
+  }
+  
+
   const padding = {
     paddingRight: 10
   }
   return (
       <Router>
         <div>
-          <h1>Software anecdotes</h1>
+          <h1> Software anecdotes </h1>
             <div>
               <Link to = "/" style = {padding}> anecdotes </Link>
               <Link to = "/create" style = {padding}> create new </Link>
               <Link to = "/about" style = {padding}> about </Link>
-              {
-
-              }
             </div>
           <div>
+            <p> {ok} </p>
           </div>
           <Routes>
             <Route path = "/" element = {<AnecdoteList anecdotes = {anecdotes} />} />
-            <Route path = "/create" element = {<CreateNew addNew = {addNew} />} />
+            <Route path = "/create" element = {<CreateNew addNew = {addNew} onCreate = {createNoti}/>} />
             <Route path = "/about" element = {<About />} />
           
             <Route path = "/anecdotes/:id" element = {<AnecdotesRouted anecdotes = {anecdotes}/>}/>
