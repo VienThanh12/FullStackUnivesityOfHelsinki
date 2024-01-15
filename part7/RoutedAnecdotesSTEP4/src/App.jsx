@@ -67,16 +67,12 @@ const CreateNew = (props) => {
 
   const navigate = useNavigate()
 
-  var k = content.value
-  var u = author.value
-  var v = info.value
-
   const handleSubmit = (e) => {
     e.preventDefault()
     props.addNew({
-      k,
-      u,
-      v,
+      content: content.value,
+      author: author.value,
+      info: info.value,
       votes: 0
     })
     props.onCreate(`a new anecdote ${content.value} created!`)
@@ -134,6 +130,7 @@ const App = () => {
 
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)
+    console.log(anecdote)
     setAnecdotes(anecdotes.concat(anecdote))
   }
   
