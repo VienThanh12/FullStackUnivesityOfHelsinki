@@ -168,9 +168,7 @@ const App = () => {
       </Router>
   )
 }
-
 // Link => to create the link when clicking the text
-
 // Routes -> Route => to create the link
 
 export default App
