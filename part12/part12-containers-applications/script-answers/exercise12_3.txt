@@ -1,0 +1,364 @@
+Script started on 2024-06-22 20:03:20+03:00 [TERM="xterm-256color" TTY="/dev/pts/9" COLUMNS="112" LINES="27"]
+[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ [7mdocker cont[27m[7ma[27m[7miner run -it ubuntu bash[27m[A
+]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ docker container run -it ubuntu bash
+[?2004l
+[?2004h]0;root@3a5980921090: /root@3a5980921090:/# ls
+[?2004l
+[0m[01;36mbin[0m  [01;34mboot[0m  [01;34mdev[0m  [01;34metc[0m  [01;34mhome[0m  [01;36mlib[0m  [01;36mlib64[0m  [01;34mmedia[0m  [01;34mmnt[0m  [01;34mopt[0m  [01;34mproc[0m  [01;34mroot[0m  [01;34mrun[0m  [01;36msbin[0m  [01;34msrv[0m  [01;34msys[0m  [30;42mtmp[0m  [01;34musr[0m  [01;34mvar[0m
+[?2004h]0;root@3a5980921090: /root@3a5980921090:/# cd usr
+[?2004l
+[?2004h]0;root@3a5980921090: /usrroot@3a5980921090:/usr# ls
+[?2004l
+[0m[01;34mbin[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;34mlib64[0m  [01;34mlibexec[0m  [01;34mlocal[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+[?2004h]0;root@3a5980921090: /usrroot@3a5980921090:/usr# cd src
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# ls
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# mkdir app
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# touch index.js
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# ls  mk  rm -rf index.js
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# ls
+[?2004l
+[0m[01;34mapp[0m
+[?2004h]0;root@3a5980921090: /usr/srcroot@3a5980921090:/usr/src# cd app
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# touch index.js
+[?2004l
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# ls
+[?2004l
+index.js
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# nano e index.js
+[?2004l
+bash: nano: command not found
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# apt. -get-  update
+[?2004l
+
+0% [Working]
+            
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+
+0% [Connecting to archive.ubuntu.com (91.189.91.81)] [1 InRelease 12.1 kB/126 kB 10%]
+                                                                                     
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+
+                                                                                     
+0% [2 InRelease 2168 B/256 kB 1%] [1 InRelease 69.0 kB/126 kB 55%]
+                                                                  
+0% [2 InRelease 12.1 kB/256 kB 5%]
+0% [2 InRelease 12.1 kB/256 kB 5%]
+                                  
+Get:3 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [84.8 kB]
+
+0% [2 InRelease 24.5 kB/256 kB 10%] [3 Packages 2268 B/84.8 kB 3%]
+                                                                  
+0% [2 InRelease 31.9 kB/256 kB 12%]
+0% [3 Packages store 0 B] [2 InRelease 34.4 kB/256 kB 13%] [Waiting for headers]
+                                                                                
+0% [2 InRelease 34.4 kB/256 kB 13%] [Waiting for headers]
+                                                         
+Get:4 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [202 kB]
+
+0% [2 InRelease 36.8 kB/256 kB 14%] [4 Packages 7219 B/202 kB 4%]
+                                                                 
+0% [2 InRelease 52.9 kB/256 kB 21%] [Waiting for headers]
+                                                         
+Get:5 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [65.1 kB]
+
+0% [2 InRelease 52.9 kB/256 kB 21%] [5 Packages 9384 B/65.1 kB 14%]
+0% [4 Packages store 0 B] [2 InRelease 52.9 kB/256 kB 21%] [5 Packages 9384 B/65.1 kB 14%]
+                                                                                          
+0% [2 InRelease 55.4 kB/256 kB 22%] [5 Packages 39.1 kB/65.1 kB 60%]
+                                                                    
+0% [2 InRelease 57.9 kB/256 kB 23%]
+0% [5 Packages store 0 B] [2 InRelease 57.9 kB/256 kB 23%]
+                                                          
+0% [2 InRelease 57.9 kB/256 kB 23%]
+                                   
+0% [Working]
+0% [Waiting for headers]
+                        
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+
+0% [6 InRelease 2168 B/126 kB 2%]
+                                 
+0% [Working]
+0% [Waiting for headers]
+                        
+Get:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+
+0% [7 InRelease 4644 B/126 kB 4%]
+                                 
+0% [Working]
+18% [Waiting for headers]
+                         
+Get:8 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+
+18% [8 Packages 4713 B/331 kB 1%]
+                                 
+20% [Waiting for headers]
+                         
+Get:9 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+
+20% [9 Packages 234 B/117 kB 0%]
+20% [8 Packages store 0 B] [9 Packages 234 B/117 kB 0%]
+                                                       
+20% [9 Packages 42.3 kB/117 kB 36%]
+                                   
+21% [Waiting for headers]
+                         
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+
+21% [10 Packages 742 B/1808 kB 0%]
+21% [9 Packages store 0 B] [10 Packages 742 B/1808 kB 0%]
+                                                         
+21% [10 Packages 13.1 kB/1808 kB 1%]
+                                    
+27% [Waiting for headers]
+                         
+Get:11 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+
+27% [11 Packages 28.5 kB/19.3 MB 0%]
+27% [10 Packages store 0 B] [11 Packages 28.5 kB/19.3 MB 0%]
+                                                            
+30% [11 Packages 691 kB/19.3 MB 4%]
+48% [11 Packages 5795 kB/19.3 MB 30%]
+59% [11 Packages 8874 kB/19.3 MB 46%]
+74% [11 Packages 13.2 MB/19.3 MB 68%]
+                                     
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [92.4 kB]
+
+                                     
+95% [12 Packages 3108 B/92.4 kB 3%]
+95% [11 Packages store 0 B] [12 Packages 3108 B/92.4 kB 3%]
+                                                           
+95% [11 Packages store 0 B] [Waiting for headers]
+                                                 
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [15.5 kB]
+
+95% [11 Packages store 0 B] [13 Packages 15.5 kB/15.5 kB 100%]
+                                                              
+95% [11 Packages store 0 B] [Waiting for headers]
+                                                 
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [139 kB]
+
+95% [11 Packages store 0 B] [14 Packages 29.9 kB/139 kB 21%]
+                                                            
+96% [11 Packages store 0 B] [Waiting for headers]
+                                                 
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [226 kB]
+
+96% [11 Packages store 0 B] [15 Packages 1672 B/226 kB 1%]
+                                                          
+97% [11 Packages store 0 B] [Waiting for headers]
+                                                 
+Get:16 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [7519 B]
+
+97% [11 Packages store 0 B] [16 Packages 7519 B/7519 B 100%]
+                                                            
+97% [11 Packages store 0 B]
+97% [11 Packages store 0 B]
+                           
+97% [Working]
+97% [12 Packages store 0 B]
+                           
+98% [Working]
+98% [13 Packages store 0 B]
+                           
+98% [Working]
+98% [14 Packages store 0 B]
+                           
+99% [Working]
+99% [15 Packages store 0 B]
+                           
+99% [Working]
+99% [16 Packages store 0 B]
+                           
+100% [Working]
+              
+Fetched 23.0 MB in 4s (5586 kB/s)
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 8%
+
+Reading package lists... 8%
+
+Reading package lists... 93%
+
+Reading package lists... 93%
+
+Reading package lists... 94%
+
+Reading package lists... 94%
+
+Reading package lists... 95%
+
+Reading package lists... 95%
+
+Reading package lists... 96%
+
+Reading package lists... 96%
+
+Reading package lists... 97%
+
+Reading package lists... 97%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# apt-get -y install nano
+[?2004l
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 8%
+
+Reading package lists... 8%
+
+Reading package lists... 93%
+
+Reading package lists... 93%
+
+Reading package lists... 94%
+
+Reading package lists... 94%
+
+Reading package lists... 95%
+
+Reading package lists... 95%
+
+Reading package lists... 96%
+
+Reading package lists... 96%
+
+Reading package lists... 97%
+
+Reading package lists... 97%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 98%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree... 53%
+
+Building dependency tree... Done
+
+
+Reading state information... 0% 
+
+Reading state information... 98%
+
+Reading state information... Done
+
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 281 kB of archives.
+After this operation, 856 kB of additional disk space will be used.
+
+0% [Working]
+            
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 nano amd64 7.2-2build1 [281 kB]
+
+2% [1 nano 7136 B/281 kB 3%]
+66% [1 nano 231 kB/281 kB 82%]
+                              
+100% [Working]
+              
+Fetched 281 kB in 1s (373 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 4376 files and directories currently installed.)
+Preparing to unpack .../nano_7.2-2build1_amd64.deb ...
+Unpacking nano (7.2-2build1) ...
+Setting up nano (7.2-2build1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/m
