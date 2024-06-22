@@ -1,0 +1,39 @@
+Script started on 2024-06-22 14:39:18+03:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="112" LINES="27"]
+[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ [7mdocker cont[27m[7ma[27m[7miner run hello-world[27m[A]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ docker container run hello-world
+[?2004l
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ mkdir /usr/ src/app
+[?2004lmkdir: cannot create directory ‘/usr/src/app’: Permission denied
+[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ mkdir usr 
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ m[Kcd usr
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr[00m$ mks[Kdir s rc[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K s rc
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr[00m$ cd src
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src[00m$ mdi r[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[Kmkd ir app
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src[00m$ cd  app
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src/app[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src/app[00m$ touch index.js
+[?2004l[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src/app[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers/usr/src/app[00m$ exit
+[?2004lexit
+
+Script done on 2024-06-22 14:40:29+03:00 [COMMAND_EXIT_CODE="0"]
