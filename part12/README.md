@@ -1,3 +1,5 @@
+# Docker Container
+
 # Docker and Containerization
 
 **Docker** is a tool designed to package and run applications in lightweight containers. This approach solves the problem of having to install and configure all the dependencies of an application every time you want to run it on a different machine.
@@ -22,3 +24,9 @@ Docker creates a **container** that packages all the dependencies needed for a g
 - Kill a Docker container: `$ docker kill CONTAINER-ID-OR-CONTAINER-NAME`
 - Run command in a Docker container: `$ docker exec -it CONTAINER-ID-OR-CONTAINER-NAME COMMAND`
 - Create a new image from a container: `$ docker commit CONTAINER-ID-OR-CONTAINER-NAME NEW-IMAGE-NAME`
+- List your Docker images: `$ docker image ls`
+- Run the new image as follows: `docker run -it hello-node-world bash`
+- Remove Container: `docker container rm hopeful_clarke`
+- Copy a file from your own machine to the container: `$ docker container cp ./yourfile.js container-name:/destination-path/yourfile.js`
+
+By using Docker, developers can ensure that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code.
