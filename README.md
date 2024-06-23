@@ -5,7 +5,9 @@ Certificate:
 
 [https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/823ad579ac4a3d9b137f32456f0d5f32](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/823ad579ac4a3d9b137f32456f0d5f32)
 
-Total: 138 exercises
+Part 0 - 7: Total: 138 exercises
+
+Part 12: 4 exercises
 
 7 credits with grade 5
 
