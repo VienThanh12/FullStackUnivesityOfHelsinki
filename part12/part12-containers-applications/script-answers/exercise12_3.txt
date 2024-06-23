@@ -357,8 +357,11 @@ Selecting previously unselected package nano.
 (Reading database ... 95%
 (Reading database ... 100%
 (Reading database ... 4376 files and directories currently installed.)
-Preparing to unpack .../nano_7.2-2build1_amd64.deb ...
-Unpacking nano (7.2-2build1) ...
-Setting up nano (7.2-2build1) ...
-update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
-update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/m
+Preparing to unpack .../naan1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# nano index.js
+[?2004l[?2004h[?1049h[22;0;0t[1;27r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[25;50H(B[0;7m[ Reading... ](B[m[25;49H(B[0;7m[ Read 0 lines ](B[m[H(B[0;7m  GNU nano 7.2 [39bindex.js [48b [1;111H(B[m[26d(B[0;7m^G(B[m Help[26;17H(B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut[26;65H(B[0;7m^T(B[m Execute[81G(B[0;7m^C(B[m Location     (B[0;7mM-U(B[m Undo[27d(B[0;7m^X(B[m Exit[27;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Paste[27;65H(B[0;7m^J(B[m Justify[81G(B[0;7m^/(B[m Go To Line   (B[0;7mM-E(B[m Redo[2d[?12l[?25h[?25l[1;64H(B[0;7m*[25d(B[m[K[1;111H[2dconsole.log((B[0;1m[35m'Hello World'[39m(B[m)[?12l[?25h[?25l[3d[?12l[?25h[?25l[25d(B[0;7mSave modified buffer? [89b [26;1H Y(B[m Yes[K[27d(B[0;7m N(B[m No  [27;18H(B[0;7mC(B[m Cancel[K[25;23H[?12l[?25h[?25l[J[27d[?12l[?25h[27;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;root@3a5980921090: /usr/src/approot@3a5980921090:/usr/src/app# exit
+[?2004lexit
+[?2004h]0;duha@C-PF3QGG8Z: ~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[01;32mduha@C-PF3QGG8Z[00m:[01;34m~/FullStackUnivesityOfHelsinki/part12/part12-containers-applications/script-answers[00m$ 
+Script done on 2024-06-22 20:46:44+03:00 [COMMAND_EXIT_CODE="0"]
