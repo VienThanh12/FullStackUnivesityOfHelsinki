@@ -1,33 +1,24 @@
-# A container
+# Docker and Containerization
 
-Software Development includes the whole lifecycle from envisioning the software to programming and to releasing it to the end-users, and even maintaining it.
+**Docker** is a tool designed to package and run applications in lightweight containers. This approach solves the problem of having to install and configure all the dependencies of an application every time you want to run it on a different machine.
 
-Containers encapsulate your application into a single package.
+## How Docker Works
 
-- The application (This one will need dependencies to run)
-- All of its dependencies
+Docker creates a **container** that packages all the dependencies needed for a given application. The container can be run on any machine that has Docker installed, without the need to install the dependencies separately.
 
-  -> Each container can run isolated fro, other containers
-  It also pervents the application inside from accessing files and resources of the device.
-  We can decide that whethere we give it the contained applications permission to access files and specify avalable resources.
+## Docker Components
 
-# Problem:
+- **Dockerfile**: This is a text file that describes the dependencies and configuration required for your application.
+- **Docker Images**: These are read-only templates that you build from a set of instructions written in your Dockerfile. Docker images define both what you want your packaged application and its dependencies to look like and what processes to run when it's launched.
+- **Docker Hub**: This is a cloud-based registry service where you can link to code repositories, build your images, store them, and deploy them.
+- **Kubernetes**: This is a system for orchestrating and managing containers, which becomes necessary when you start dealing with multiple containers.
 
-When you build a website, you need many packages or dependencies to run the app but when you switch to another machine, you have to download all of these things again.
-So docker will solve this problem.
+## Basic Docker Commands
 
-# Solution:
-
-Pack everything in a container. It doesn’t need to know what is inside the box but you just need to run it to use the application. By running a virtual machine
-
-# Type of Docker:
-
-Docker-file: Describes what you need in your projects
-
-Docker-images: Docker hub (can be uploaded to a cloud whether you want it public or private)
-
-Container
-
-# Kubernetes
-
-Kubernetes → organize all of the docker containers (have too many containers)
+- Check Docker version: `$ docker -v`
+- Run a Docker container: `$ docker container run IMAGE-NAME`
+- List all Docker containers: `$ docker container ls -a` (short form: `docker ps -a`)
+- Start a Docker container: `$ docker start CONTAINER-ID-OR-CONTAINER-NAME`
+- Kill a Docker container: `$ docker kill CONTAINER-ID-OR-CONTAINER-NAME`
+- Run command in a Docker container: `$ docker exec -it CONTAINER-ID-OR-CONTAINER-NAME COMMAND`
+- Create a new image from a container: `$ docker commit CONTAINER-ID-OR-CONTAINER-NAME NEW-IMAGE-NAME`
