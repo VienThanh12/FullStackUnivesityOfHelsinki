@@ -1,20 +1,25 @@
 # Docker Container
 
-Docker
+# Docker
 
 A container
-
+### What problems it solves?
 Problem: When you build a website, you need many packages or dependencies to run the app but when you switch to another machine, you have to download all of these things again. 
 
 So docker will solve this problem.
 
+### How it does?
 Pack everything in a container. It doesn’t need to know what is inside the box but you just need to run it to use the application. By running a virtual machine
+
+### What kind of things we will have when we deal with docker
 
 Docker-file: Describes what you need in your projects 
 
 Docker-images: Docker hub
 
 Kubernetes → organize all of the docker containers (have too many containers)
+
+## SYNTAX
 
 $ docker -v
 Docker version 25.0.3, build 4debf41
